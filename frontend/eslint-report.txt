@@ -1,0 +1,63 @@
+﻿
+C:\Users\Administrator\cloth\frontend\src\App.jsx
+  13:14  error  Fast refresh only works when a file only exports components. Move your React context(s) to a separate file                      react-refresh/only-export-components
+  15:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\Administrator\cloth\frontend\src\components\Header.jsx
+  29:26  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  27 |
+  28 |   useEffect(() => {
+> 29 |     if (!query.trim()) { setResults([]); setShowDrop(false); return; }
+     |                          ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  30 |     const timer = setTimeout(async () => {
+  31 |       try {
+  32 |         const { data } = await axios.get(`${API}/search?q=${encodeURIComponent(query)}`);  react-hooks/set-state-in-effect
+  35:15  error  Empty block statement                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   no-empty
+
+C:\Users\Administrator\cloth\frontend\src\pages\MenPage.jsx
+  2:10  error  'useLocation' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\Administrator\cloth\frontend\src\pages\ProductDetailPage.jsx
+  38:5  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  36 |
+  37 |   useEffect(() => {
+> 38 |     setLoading(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  39 |     setActiveImg(0);
+  40 |     setSelectedSize('');
+  41 |     setSelectedColor('');  react-hooks/set-state-in-effect
+  51:6  warning  React Hook useEffect has a missing dependency: 'navigate'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              react-hooks/exhaustive-deps
+
+C:\Users\Administrator\cloth\frontend\src\pages\SearchPage.jsx
+  16:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  14 |
+  15 |   useEffect(() => {
+> 16 |     setInputVal(q);
+     |     ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  17 |     if (!q.trim()) { setProducts([]); return; }
+  18 |     setLoading(true);
+  19 |     axios.get(`${API}/products?search=${encodeURIComponent(q)}&limit=40`)  react-hooks/set-state-in-effect
+
+Γ£û 8 problems (7 errors, 1 warning)
+
