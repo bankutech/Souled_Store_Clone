@@ -1,4 +1,4 @@
-# Souled_Store_Clone
+# Souled Store Clone
 
 ## Overview
 React Vite store clone. Run with: npm install then npm run dev
